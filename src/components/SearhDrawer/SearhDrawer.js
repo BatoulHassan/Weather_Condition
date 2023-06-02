@@ -27,7 +27,7 @@ export const SearhDrawer = ({setPosition, positionHandler, showPosition}) => {
            setDrawerOpen(false);
         }
         catch(err){
-          console.log(err)
+          console.log(err);
         }
       } else {
         console.log("Please enter a city name")

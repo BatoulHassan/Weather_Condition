@@ -6,14 +6,13 @@ import { useState, useEffect } from "react";
 import { UIProvider } from "./ContextUi";
 import { dateToStr, currentDate } from "./date";
 
-//const API_KEY= "6930215e0e73f413a76aa5dbf275ac25";
 const API_KEY = process.env.REACT_APP_Weather_Api;
 var LAT=-32.9615869;
 var LON=-60.6253564;
-//const result = dotenv.config();
-//console.log("API_KEY IS: ", API_KEY)
+
 var REQUEST_URL1 = "https://api.openweathermap.org/data/2.5/weather?lat="+LAT+"&lon="+LON+"&appid="+API_KEY+"&units=metric";
 var REQUEST_URL2 = "https://api.openweathermap.org/data/2.5/forecast?lat="+LAT+"&lon="+LON+"&appid="+API_KEY+"&units=metric";
+
 
 function App() {
  
@@ -73,11 +72,13 @@ function App() {
         LON=position.coords.longitude;
         REQUEST_URL1 = "https://api.openweathermap.org/data/2.5/weather?lat="+LAT+"&lon="+LON+"&appid="+API_KEY+"&units=metric";
         REQUEST_URL2 = "https://api.openweathermap.org/data/2.5/forecast?lat="+LAT+"&lon="+LON+"&appid="+API_KEY+"&units=metric";
+
         setPosition({latitude:LAT,longitude:LON})
   }
 
   const getCurrentWeather = async() => {
     REQUEST_URL1  = `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=${API_KEY}&units=metric`;
+    
     try{
       const response = await fetch(REQUEST_URL1)
       const data = await response.json();
