@@ -4,7 +4,6 @@ import CloseIcon from "@material-ui/icons/Close";
 import useStyles from "./style";
 import { useUIContext } from '../../ContextUi';
 
-//const API_KEY= "6930215e0e73f413a76aa5dbf275ac25";
 const API_KEY = process.env.REACT_APP_Weather_Api;
 
 export const SearhDrawer = ({setPosition, positionHandler, showPosition}) => {
