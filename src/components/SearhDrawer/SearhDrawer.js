@@ -6,7 +6,7 @@ import { useUIContext } from '../../ContextUi';
 
 const API_KEY = process.env.REACT_APP_Weather_Api;
 
-export const SearhDrawer = ({setPosition, positionHandler, showPosition}) => {
+export const SearhDrawer = ({setPosition}) => {
 
     const classes = useStyles();
     const {drawerOpen, setDrawerOpen} = useUIContext();
